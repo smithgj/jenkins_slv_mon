@@ -2,17 +2,17 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-me = "greg.smith@merrillcorp.com"
-you = "6123211852@tmomail.net"
+from_addr = "greg.smith@merrillcorp.com"
+to_addr = "6123211852@tmomail.net"
 
 # Create message container - the correct MIME type is multipart/alternative.
-msg = MIMEMultipart('alternative')
-# msg['Subject'] = "my subject"
-msg['From'] = me
-msg['To'] = you
+message = MIMEMultipart('alternative')
+# message['Subject'] = "my subject"
+message['From'] = from_addr
+message['To'] = to_addr
 
 # Create the body of the message
-html = """\
+html_msg = """\
 <html>
   <head></head>
   <body>
@@ -25,10 +25,10 @@ html = """\
 """
 
 # Record the MIME types of both parts - text/plain and text/html.
-part = MIMEText(html, 'html')
-msg.attach(part)
+html_part = MIMEText(html_msg, 'html')
+message.attach(html_part)
 
 # Send the message via local SMTP server.
-s = smtplib.SMTP('relay.stp.mrll.com')
-s.sendmail(me, you, msg.as_string())
-s.quit()
+server = smtplib.SMTP('relay.stp.mrll.com')
+server.sendmail(from_addr, to_addr, message.as_string())
+server.quit()
