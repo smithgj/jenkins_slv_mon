@@ -1,9 +1,6 @@
 .idea/
+
 build/
-jenkins_slv_mon.build/
-jenkins_slv_mon.dist/
-dist/
-jenkins_slv_mon.spec
-greg.html
-__pycache__/jenkins_slv_mon.cpython-36.pyc
 venv/
+__pycache__/jenkins_slv_check.cpython-36.pyc
+__pycache__/jenkins_slv_mon.cpython-36.pyc
