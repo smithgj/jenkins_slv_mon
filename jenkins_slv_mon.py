@@ -47,6 +47,6 @@ except requests.HTTPError as e:
     alert(e)
     sys.exit(1)
 if ((slv_data.json()).get('offline')) or ((slv_data.json()).get('temporarilyOffline')):
-    print ('Jenkins slave svc-us2p-too-12.adminsys.mrll.com is DOWN')
+#   print ('Jenkins slave svc-us2p-too-12.adminsys.mrll.com is DOWN')
     alert('Jenkins slave svc-us2p-too-12.adminsys.mrll.com is DOWN')
 
